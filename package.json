@@ -1,0 +1,32 @@
+{
+    "name": "playground",
+    "version": "0.0.1",
+    "scripts": {
+        "ng": "ng",
+        "build": "ng build --configuration development",
+        "deploy": "ng build --output-path docs --base-href /playground/ && copy docs\\index.html docs\\404.html",
+        "start": "ng serve --configuration development"
+    },
+    "private": true,
+    "dependencies": {
+        "@angular/animations": "^15.0.3",
+        "@angular/cdk": "^15.0.2",
+        "@angular/common": "^15.0.3",
+        "@angular/compiler": "^15.0.3",
+        "@angular/core": "^15.0.3",
+        "@angular/forms": "^15.0.3",
+        "@angular/material": "^15.0.2",
+        "@angular/platform-browser": "^15.0.3",
+        "@angular/platform-browser-dynamic": "^15.0.3",
+        "@angular/router": "^15.0.3",
+        "rxjs": "~7.6.0",
+        "tslib": "^2.4.1",
+        "zone.js": "~0.12.0"
+    },
+    "devDependencies": {
+        "@angular-devkit/build-angular": "^15.0.3",
+        "@angular/cli": "~15.0.3",
+        "@angular/compiler-cli": "^15.0.3",
+        "typescript": "^4.8.4"
+    }
+}
