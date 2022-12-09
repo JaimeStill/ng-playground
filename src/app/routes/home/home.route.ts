@@ -9,6 +9,7 @@ import { TabLink } from '../../models';
 export class HomeRoute {
   links: TabLink[] = [
     { url: 'material', label: 'Material' },
+    { url: 'cdk', label: 'CDK' },
     { url: 'flex-layout', label: 'Flex Layout' },
     { url: 'forms', label: 'Reactive Forms' }
   ]

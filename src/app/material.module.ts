@@ -8,8 +8,6 @@ import {
   MatRippleModule
 } from '@angular/material/core';
 
-import { ClipboardModule } from '@angular/cdk/clipboard';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -20,6 +18,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -37,8 +36,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   exports: [
-    ClipboardModule,
-    DragDropModule,
     MatBadgeModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -51,6 +48,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatInputModule,
     MatLineModule,
+    MatListModule,
     MatMenuModule,
     MatOptionModule,
     MatPaginatorModule,

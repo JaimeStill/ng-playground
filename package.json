@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "build": "ng build --configuration development",
-        "deploy": "ng build --output-path docs --base-href /playground/ && copy docs\\index.html docs\\404.html",
+        "deploy": "ng build --output-path docs --base-href /ng-playground/ && copy docs\\index.html docs\\404.html",
         "start": "ng serve --configuration development"
     },
     "private": true,
