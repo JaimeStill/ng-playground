@@ -1,0 +1,6 @@
+div.option-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    gap: 8px;
+}

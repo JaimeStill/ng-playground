@@ -1,1 +1,30 @@
-<p class="m8 mat-headline-6">Checkbox</p>
+<div class="option-grid p8 m8 border-divider rounded">
+    <mat-form-field>
+        <mat-label>Color</mat-label>
+        <mat-select [(ngModel)]="color">
+            <mat-option *ngFor="let c of colors"
+                        [value]="c">{{c}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Label Position</mat-label>
+        <mat-select [(ngModel)]="position">
+            <mat-option *ngFor="let p of positions"
+                        [value]="p">{{p}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-slide-toggle [(ngModel)]="checked">Checked</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="indeterminate">Indeterminate</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="disabled">Disabled</mat-slide-toggle>
+</div>
+<div flexContainer
+     flexDirection="column"
+     flexMain="center"
+     flexCross="center"
+     class="m8 p8 rounded border-divider background-card">
+    <mat-checkbox [(ngModel)]="checked"
+                  [(indeterminate)]="indeterminate"
+                  [disabled]="disabled"
+                  [labelPosition]="position"
+                  [color]="color">Important Checkbox</mat-checkbox>
+</div>
