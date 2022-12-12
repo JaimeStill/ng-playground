@@ -4,7 +4,6 @@ import { BadgeRoute } from './badge.route';
 import { ButtonRoute } from './button.route';
 import { CheckboxRoute } from './checkbox.route';
 import { ChipsRoute } from './chips.route';
-import { CoreRoute } from './core.route';
 import { DialogRoute } from './dialog.route';
 import { DividerRoute } from './divider.route';
 import { FormFieldRoute } from './form-field.route';
@@ -32,7 +31,6 @@ export const MaterialChildComponents = [
     ButtonRoute,
     CheckboxRoute,
     ChipsRoute,
-    CoreRoute,
     DialogRoute,
     DividerRoute,
     FormFieldRoute,
@@ -61,7 +59,6 @@ export const MaterialChildRoutes: Route[] = [
     { path: 'button', component: ButtonRoute },
     { path: 'checkbox', component: CheckboxRoute },
     { path: 'chips', component: ChipsRoute },
-    { path: 'core', component: CoreRoute },
     { path: 'dialog', component: DialogRoute },
     { path: 'divider', component: DividerRoute },
     { path: 'form-field', component: FormFieldRoute },

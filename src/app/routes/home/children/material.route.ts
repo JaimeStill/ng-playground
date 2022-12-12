@@ -12,7 +12,6 @@ export class MaterialRoute {
         { url: 'button', label: 'Button' },
         { url: 'checkbox', label: 'Checkbox' },
         { url: 'chips', label: 'Chips' },
-        { url: 'core', label: 'Core' },
         { url: 'dialog', label: 'Dialog' },
         { url: 'divider', label: 'Divider' },
         { url: 'form-field', label: 'Form Field' },

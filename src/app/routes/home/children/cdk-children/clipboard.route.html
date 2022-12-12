@@ -1,0 +1,36 @@
+<p class="m8 mat-headline-6">Clipboard</p>
+<ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
+<mat-form-field class="m4">
+    <mat-label>Picsum ID</mat-label>
+    <input matInput
+           type="number"
+           (keydown.enter)="load(id)"
+           [(ngModel)]="id">
+    <button mat-icon-button
+            matSuffix
+            [disabled]="id < 0"
+            (click)="load(id)">
+        <mat-icon>refresh</mat-icon>
+    </button>
+</mat-form-field>
+<div class="p8 m4 background-card rounded border-divider">
+    <pre *ngIf="data else loading"><code>{{data | json}}</code></pre>
+</div>
+<button mat-stroked-button
+        color="primary"
+        class="m4"
+        (click)="copy()">
+    Copy to Clipboard
+</button>
+<div flexContainer
+     flexDirection="column"
+     flexMain="start"
+     flexCross="stretch">
+    <mat-form-field class="m4">
+        <mat-label>Notes</mat-label>
+        <textarea matInput
+                  rows="8"></textarea>
+    </mat-form-field>
+</div>
