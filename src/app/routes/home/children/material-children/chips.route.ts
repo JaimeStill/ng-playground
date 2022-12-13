@@ -1,3 +1,8 @@
+import {
+    Component,
+    ElementRef,
+    ViewChild
+} from '@angular/core';
 
 import {
     MatChipEditedEvent,
@@ -10,7 +15,14 @@ import {
     ENTER
 } from '@angular/cdk/keycodes';
 
-import { Component } from '@angular/core';
+import {
+    map,
+    startWith
+} from 'rxjs/operators';
+
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 interface Book {
     genre: string;
@@ -29,20 +41,6 @@ interface Fruit {
 export class ChipsRoute {
     addOnBlur = true;
     readonly separatorKeyCodes = [ENTER, COMMA] as const;
-
-    selectedGenres: string[] = [];
-
-    fruits: Fruit[] = [
-        { name: 'Orange' },
-        { name: 'Apple' },
-        { name: 'Strawberry' }
-    ];
-
-    genres: string[] = [
-        'Horror',
-        'Science Fiction',
-        'Fantasy'
-    ];
 
     private library: Book[] = [
         {
@@ -79,12 +77,65 @@ export class ChipsRoute {
 
     books = this.library;
 
-    getBooks = () => this.books = this.selectedGenres.length > 0
-        ? this.library.filter(b => this.selectedGenres.includes(b.genre))
+    allGenres: string[] = [
+        'Horror',
+        'Science Fiction',
+        'Fantasy'
+    ];
+
+    genres: string[] = [];
+
+    fruits: Fruit[] = [
+        { name: 'Orange' },
+        { name: 'Apple' },
+        { name: 'Strawberry' }
+    ];
+
+    allArtists: string[] = [
+        'Claude Monet',
+        'Edgar Degas',
+        'Edvard Munch',
+        'Henri Matisse',
+        'Jackson Pollock',
+        'Leonardo da Vinci',
+        'M.C. Escher',
+        'Michaelangelo',
+        'Norman Rockwell',
+        'Pablo Picasso',
+        'Raphael',
+        'Rembrandt',
+        'Salvador Dali',
+        'Vincent Van Gogh'
+    ];
+
+    artists: string[] = [
+        'M.C. Escher'
+    ];
+
+    filteredArtists: Observable<string[]>;
+    artistCtrl = new FormControl('');
+
+    @ViewChild('artistInput') artistInput: ElementRef<HTMLInputElement>;
+
+    constructor() {
+        this.filteredArtists = this.artistCtrl
+            .valueChanges
+            .pipe(
+                startWith(null),
+                map((artist: string | null) =>
+                    artist
+                        ? this.allArtists.filter(a => a.toLowerCase().includes(artist.toLowerCase()))
+                        : this.allArtists.filter(a => !this.artists.includes(a))
+                )
+            );
+    }
+
+    getBooks = () => this.books = this.genres.length > 0
+        ? this.library.filter(b => this.genres.includes(b.genre))
         : this.library;
 
     selectGenre = (event: MatChipListboxChange) => {
-        this.selectedGenres = event.value;
+        this.genres = event.value;
         this.getBooks();
     }
 
@@ -92,7 +143,7 @@ export class ChipsRoute {
         const value = (event.value || '').trim();
 
         if (value)
-            this.fruits.push({name: value});
+            this.fruits.push({ name: value });
 
         event.chipInput!.clear();
     }
@@ -116,5 +167,41 @@ export class ChipsRoute {
 
         if (index >= 0)
             this.fruits.splice(index, 1);
+    }
+
+    validate = (artist: string): boolean => {
+        if (!artist) return false;
+
+        const index = this.artists.indexOf(artist);
+        return index < 0;
+    }
+
+    addArtist = (event: MatChipInputEvent) => {
+        const value = (event.value || '').trim();
+
+        if (this.validate(value))
+            this.artists.push(value);
+
+        event.chipInput!.clear();
+
+        this.artistCtrl.setValue(null);
+    }
+
+    removeArtist = (artist: string) => {
+        const index = this.artists.indexOf(artist);
+
+        if (index >= 0)
+            this.artists.splice(index, 1);
+
+        this.artistInput.nativeElement.value = '';
+        this.artistCtrl.setValue(null);
+    }
+
+    selectArtist = (event: MatAutocompleteSelectedEvent) => {
+        if (this.validate(event.option.viewValue))
+            this.artists.push(event.option.viewValue);
+
+        this.artistInput.nativeElement.value = '';
+        this.artistCtrl.setValue(null);
     }
 }

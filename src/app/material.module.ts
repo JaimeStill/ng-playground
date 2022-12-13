@@ -8,6 +8,7 @@ import {
   MatRippleModule
 } from '@angular/material/core';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -36,6 +37,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   exports: [
+    MatAutocompleteModule,
     MatBadgeModule,
     MatButtonModule,
     MatButtonToggleModule,
