@@ -3,3 +3,5 @@ export * from './query';
 export * from './storage';
 export * from './utils';
 export * from './validation';
+
+export * from './picsum';
