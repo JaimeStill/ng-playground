@@ -11,10 +11,10 @@ import {
     switchMap
 } from 'rxjs/operators';
 
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { SnackerService } from '../services';
 
-interface PicsumData {
+export interface PicsumData {
     id: number;
     author: string;
     width: 5000;
@@ -29,7 +29,8 @@ interface PicsumPage {
 }
 
 export class Picsum {
-    readonly endpoint: string = 'https://picsum.photos/v2/list';
+    readonly base: string = 'https://picsum.photos/';
+    readonly endpoint: string = `${this.base}v2/list`;
     private url = new Subject<URL>();
     protected data = new ReplaySubject<PicsumPage>(1);
     protected sub: Subscription;
@@ -127,6 +128,8 @@ export class Picsum {
             url.searchParams.delete('limit');
 
         this.url.next(url);
-
     }
+
+    setThumbnail = (pic: PicsumData, width: number, height: number): string =>
+        `${this.base}id/${pic.id}/${width}/${height}.webp`;
 }
