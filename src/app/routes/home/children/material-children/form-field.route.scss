@@ -1,0 +1,18 @@
+div.option-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+input.currency {
+    text-align: right;
+    appearance: textfield;
+}
+
+input.currency::-webkit-outer-spin-button,
+input.currency::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.password::-ms-reveal {
+    display: none;
+}

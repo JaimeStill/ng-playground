@@ -1,1 +1,71 @@
-<p class="m8 mat-headline-6">Form Field</p>
+<p class="m12 mat-headline-6">Form Field Options</p>
+<div class="p8 m8 border-divider rounded background-card option-grid">
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Appearance</mat-label>
+        <mat-select [(ngModel)]="appearance">
+            <mat-option value="fill">Fill</mat-option>
+            <mat-option value="outline">Outline</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Color</mat-label>
+        <mat-select [(ngModel)]="color">
+            <mat-option value="primary">Primary</mat-option>
+            <mat-option value="accent">Accent</mat-option>
+            <mat-option value="warn">Warn</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Float Label</mat-label>
+        <mat-select [(ngModel)]="floatLabel">
+            <mat-option value="auto">Auto</mat-option>
+            <mat-option value="always">Always</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Hint Alignment</mat-label>
+        <mat-select [(ngModel)]="hintAlign">
+            <mat-option value="start">Start</mat-option>
+            <mat-option value="end">End</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<p class="m12 mat-headline-6">Form Field Examples</p>
+<div class="p8 m8 border-divider background-card rounded"
+     flexContainer
+     flexMain="start"
+     flexCross="center"
+     flexGap="8px">
+    <mat-form-field flexChild
+                    [appearance]="appearance"
+                    [color]="color"
+                    [floatLabel]="floatLabel">
+        <mat-label>Enter your password</mat-label>
+        <input matInput
+               class="password"
+               [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button
+                matSuffix
+                (click)="hide = !hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-hint [align]="hintAlign">Password hint</mat-hint>
+    </mat-form-field>
+    <mat-form-field flexChild
+                    floatLabel="always"
+                    [appearance]="appearance"
+                    [color]="color">
+        <mat-label>Amount</mat-label>
+        <input matInput
+               type="number"
+               placeholder="0"
+               class="currency">
+        <span matTextPrefix>$&nbsp;</span>
+        <span matTextSuffix>.00</span>
+        <mat-hint [align]="hintAlign">Payment details</mat-hint>
+    </mat-form-field>
+</div>
