@@ -1,1 +1,19 @@
-<p class="m8 mat-headline-6">Divider</p>
+<div class="p8 m8 border-divider rounded"
+     flexContainer
+     flexMain="space-between"
+     flexCross="center">
+    <mat-slide-toggle [(ngModel)]="inset">Inset</mat-slide-toggle>
+    <mat-slide-toggle [(ngModel)]="vertical">Vertical</mat-slide-toggle>
+</div>
+<div class="m8 border-divider rounded background-card"
+     flexContainer
+     flexMain="start"
+     flexCross="stretch"
+     [flexDirection]="direction()">
+    <p flexChild
+       class="m8 mat-headline-6">Section A</p>
+    <mat-divider [inset]="inset"
+                 [vertical]="vertical"></mat-divider>
+    <p flexChild
+       class="m8 mat-headline-6">Section B</p>
+</div>
