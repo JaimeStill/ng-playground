@@ -1,9 +1,6 @@
 <div class="mat-typography">
-    <h2 mat-dialog-title>{{pic?.author}} - {{pic?.id}}</h2>
-    <div flexContainer
-         flexDirection="column"
-         flexMain="center"
-         flexCross="center">
+    <span mat-dialog-title>{{pic?.author}} - {{pic?.id}}</span>
+    <div>
         <img [src]="pic.download_url"
              [alt]="pic.url">
     </div>

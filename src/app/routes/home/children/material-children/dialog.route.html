@@ -48,16 +48,16 @@
                 <div flexContainer
                      flexMain="space-between"
                      flexCross="center">
-                    <p class="m4 mat-headline-6">{{pic.author}}</p>
+                    <p class="m4 mat-subtitle-1">{{pic.author}}</p>
                     <button mat-icon-button
                             color="primary"
                             (click)="view(pic)">
                         <mat-icon>launch</mat-icon>
                     </button>
                 </div>
-                <img [src]="picsum.setThumbnail(pic, 320, 320)"
+                <img [src]="picsum.setThumbnail(pic, 260, 260)"
                      [alt]="pic.url"
-                     [width]="320">
+                     [width]="260">
             </div>
         </div>
     </div>

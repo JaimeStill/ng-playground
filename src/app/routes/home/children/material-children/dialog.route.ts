@@ -22,7 +22,7 @@ export class DialogRoute implements OnDestroy {
         http: HttpClient,
         snacker: SnackerService
     ) {
-        this.picsum = new Picsum(http, snacker, 1, 10);
+        this.picsum = new Picsum(http, snacker);
     }
 
     ngOnDestroy(): void {
@@ -38,7 +38,7 @@ export class DialogRoute implements OnDestroy {
         data: pic,
         autoFocus: false,
         disableClose: true,
-        height: '80%',
-        width: '80%'
+        maxHeight: '98%',
+        maxWidth: '98%'
     });
 }
