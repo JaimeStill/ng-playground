@@ -1,5 +1,7 @@
 # Playground
 
+[![Deploy Pages](https://github.com/JaimeStill/ng-playground/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/JaimeStill/ng-playground/actions/workflows/deploy-pages.yml) [![pages-build-deployment](https://github.com/JaimeStill/ng-playground/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/JaimeStill/ng-playground/actions/workflows/pages/pages-build-deployment)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Development server
