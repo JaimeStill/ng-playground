@@ -1,1 +1,108 @@
-<p class="m8 mat-headline-6">Input</p>
+<p class="m12 mat-headline-6">Input</p>
+<div class="p8 m8 border-divider rounded background-card input-grid">
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Color</mat-label>
+        <input matInput
+               type="color"
+               [(ngModel)]="inputs.color">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Date</mat-label>
+        <input matInput
+               type="date"
+               [(ngModel)]="inputs.date">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>DateTime Local</mat-label>
+        <input matInput
+               type="datetime-local"
+               [(ngModel)]="inputs.localDatetime">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Email</mat-label>
+        <input matInput
+               type="email"
+               [(ngModel)]="inputs.email">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Month</mat-label>
+        <input matInput
+               type="month"
+               [(ngModel)]="inputs.month">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Number</mat-label>
+        <input matInput
+               type="number"
+               [(ngModel)]="inputs.number">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Password</mat-label>
+        <input matInput
+               type="password"
+               [(ngModel)]="inputs.password">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Search</mat-label>
+        <input matInput
+               type="search"
+               [(ngModel)]="inputs.search">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Tel</mat-label>
+        <input matInput
+               type="tel"
+               [(ngModel)]="inputs.phone">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Text</mat-label>
+        <input matInput
+               type="text"
+               [(ngModel)]="inputs.text">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Time</mat-label>
+        <input matInput
+               type="time"
+               [(ngModel)]="inputs.time">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>URL</mat-label>
+        <input matInput
+               type="url"
+               [(ngModel)]="inputs.url">
+        <button matSuffix
+                mat-icon-button
+                (click)="openUrl(inputs.url)">
+            <mat-icon>open_in_browser</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+<div class="p8 m8 border-divider rounded">
+    <pre class="color-accent"><code>{{inputs | json}}</code></pre>
+</div>
+<p class="m12 mat-headline-6">Textarea</p>
+<div class="p8 m4 border-divider rounded background-card"
+     flexContainer
+     flexDirection="column"
+     flexCross="stretch">
+    <mat-form-field class="m4">
+        <mat-label>Textarea</mat-label>
+        <textarea matInput
+                  cdkTextareaAutosize
+                  cdkAutosizeMinRows="4"
+                  cdkAutosizeMaxRows="8"></textarea>
+    </mat-form-field>
+</div>
