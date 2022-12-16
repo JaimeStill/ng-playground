@@ -1,7 +1,6 @@
 <p class="m12 mat-headline-6">Material Icon Options</p>
 <div class="p8 m8 border-divider rounded background-card option-grid">
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Color</mat-label>
         <mat-select [(ngModel)]="matColor">
             <mat-option>None</mat-option>
@@ -10,22 +9,19 @@
             <mat-option value="warn">Warn</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Icon Style</mat-label>
         <mat-select [(ngModel)]="matClass">
             <mat-option value="material-icons">Filled</mat-option>
             <mat-option value="material-icons-outlined">Outlined</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Icon</mat-label>
         <input matInput
                [(ngModel)]="matIcon">
     </mat-form-field>
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Size</mat-label>
         <input matInput
                type="number"
@@ -43,8 +39,7 @@
 </div>
 <p class="m12 mat-headline-6">Font Awesome Icon Options</p>
 <div class="p8 m8 border-divider rounded background-card option-grid">
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Color</mat-label>
         <mat-select [(ngModel)]="faColor">
             <mat-option>None</mat-option>
@@ -52,8 +47,7 @@
                         [value]="p.style">{{p.color}}</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Font Set</mat-label>
         <mat-select [(ngModel)]="faSet">
             <mat-option value="fas">fas (Solid)</mat-option>
@@ -61,14 +55,12 @@
             <mat-option value="fab">fab (Brands)</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Font Icon</mat-label>
         <input matInput
                [(ngModel)]="faIcon">
     </mat-form-field>
-    <mat-form-field class="m4"
-                    subscriptSizing="dynamic">
+    <mat-form-field class="m4">
         <mat-label>Label</mat-label>
         <input matInput
                [(ngModel)]="faLabel">

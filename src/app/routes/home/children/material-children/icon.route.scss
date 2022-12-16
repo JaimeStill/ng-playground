@@ -1,6 +1,4 @@
 div.option-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     align-items: center;
 }
 
@@ -16,10 +14,4 @@ mat-icon.fa-icon {
     height: auto;
     font-size: 126px;
     padding: 1px;
-}
-
-@media (max-width: 300) {
-    div.option-grid {
-        grid-template-columns: 1fr;
-    }
 }
