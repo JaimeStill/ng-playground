@@ -1,1 +1,32 @@
-<p class="m8 mat-headline-6">Menu</p>
+<div class="p8 m8 border-divider rounded">
+    <div flexContainer
+         flexCross="center">
+        <mat-form-field class="m4"
+                        subscriptSizing="dynamic"
+                        flexChild>
+            <mat-label>Name</mat-label>
+            <input matInput
+                   [(ngModel)]="data.user.name">
+        </mat-form-field>
+        <mat-form-field class="m4"
+                        subscriptSizing="dynamic"
+                        flexChild>
+            <mat-label>Folder</mat-label>
+            <input matInput
+                   [(ngModel)]="data.user.folder">
+        </mat-form-field>
+        <mat-menu #appMenu="matMenu">
+            <ng-template matMenuContent
+                         let-user="user">
+                <button mat-menu-item>{{user?.folder ?? 'Settings'}}</button>
+                <button mat-menu-item>Log off {{user?.name ?? 'User'}}</button>
+            </ng-template>
+        </mat-menu>
+        <button class="m4"
+                mat-icon-button
+                [matMenuTriggerFor]="appMenu"
+                [matMenuTriggerData]="data">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+    </div>
+</div>

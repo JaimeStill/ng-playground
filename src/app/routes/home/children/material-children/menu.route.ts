@@ -4,4 +4,11 @@ import { Component } from '@angular/core';
     selector: 'menu-route',
     templateUrl: 'menu.route.html'
 })
-export class MenuRoute { }
+export class MenuRoute {
+    data = {
+        user: {
+            name: 'Admin',
+            folder: 'Scripts'
+        }
+    }
+}
