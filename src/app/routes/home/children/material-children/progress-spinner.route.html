@@ -1,1 +1,42 @@
-<p class="m8 mat-headline-6">Progress Spinner</p>
+<div class="p8 m8 border-divider rounded background-card option-grid">
+    <mat-form-field class="m4">
+        <mat-label>Color</mat-label>
+        <mat-select [(ngModel)]="color">
+            <mat-option value="primary">Primary</mat-option>
+            <mat-option value="accent">Accent</mat-option>
+            <mat-option value="warn">Warn</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="m4">
+        <mat-label>Mode</mat-label>
+        <mat-select [(ngModel)]="mode">
+            <mat-option value="determinate">Determinate</mat-option>
+            <mat-option value="indeterminate">Indeterminate</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="m4">
+        <mat-label>Diameter</mat-label>
+        <input matInput
+               type="number"
+               min="1"
+               max="1000"
+               [(ngModel)]="diameter">
+    </mat-form-field>
+    <mat-form-field class="m4">
+        <mat-label>Stroke Width</mat-label>
+        <input matInput
+               type="number"
+               min="1"
+               max="100"
+               [(ngModel)]="strokeWidth">
+    </mat-form-field>
+</div>
+<div class="m12"
+     flexContainer
+     flexMain="center">
+    <mat-progress-spinner [color]="color"
+                          [diameter]="diameter"
+                          [mode]="mode"
+                          [strokeWidth]="strokeWidth"
+                          [value]="value"></mat-progress-spinner>
+</div>
