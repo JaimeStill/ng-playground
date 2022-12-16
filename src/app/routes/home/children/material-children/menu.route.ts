@@ -2,13 +2,18 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'menu-route',
-    templateUrl: 'menu.route.html'
+    templateUrl: 'menu.route.html',
+    styleUrls: ['menu.route.scss']
 })
 export class MenuRoute {
-    data = {
-        user: {
+    user = {
+        account: {
             name: 'Admin',
-            folder: 'Scripts'
+            icon: 'account_circle'
+        },
+        folder: {
+            name: 'Scripts',
+            icon: 'source'
         }
     }
 }

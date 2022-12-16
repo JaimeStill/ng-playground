@@ -1,32 +1,98 @@
-<div class="p8 m8 border-divider rounded">
-    <div flexContainer
-         flexCross="center">
-        <mat-form-field class="m4"
-                        subscriptSizing="dynamic"
-                        flexChild>
-            <mat-label>Name</mat-label>
-            <input matInput
-                   [(ngModel)]="data.user.name">
-        </mat-form-field>
-        <mat-form-field class="m4"
-                        subscriptSizing="dynamic"
-                        flexChild>
-            <mat-label>Folder</mat-label>
-            <input matInput
-                   [(ngModel)]="data.user.folder">
-        </mat-form-field>
-        <mat-menu #appMenu="matMenu">
-            <ng-template matMenuContent
-                         let-user="user">
-                <button mat-menu-item>{{user?.folder ?? 'Settings'}}</button>
-                <button mat-menu-item>Log off {{user?.name ?? 'User'}}</button>
-            </ng-template>
-        </mat-menu>
-        <button class="m4"
-                mat-icon-button
-                [matMenuTriggerFor]="appMenu"
-                [matMenuTriggerData]="data">
-            <mat-icon>more_vert</mat-icon>
-        </button>
-    </div>
+<p class="m12 mat-headline-6">Menu</p>
+<div class="p8 m8 border-divider rounded option-grid">
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Folder</mat-label>
+        <input matInput
+               [(ngModel)]="user.folder.name">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Folder Icon</mat-label>
+        <input matInput
+               [(ngModel)]="user.folder.icon">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Account Name</mat-label>
+        <input matInput
+               [(ngModel)]="user.account.name">
+    </mat-form-field>
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
+        <mat-label>Account Icon</mat-label>
+        <input matInput
+               [(ngModel)]="user.account.icon">
+    </mat-form-field>
 </div>
+<mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent
+                 let-user="user">
+        <button mat-menu-item>
+            <mat-icon>{{user?.folder?.icon || 'settings'}}</mat-icon>
+            <span>{{user?.folder?.name || 'Settings'}}</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>{{user?.account?.icon || 'account_circle'}}</mat-icon>
+            <span>Account: {{user?.account?.name || 'User'}}</span>
+        </button>
+    </ng-template>
+</mat-menu>
+<button class="m8"
+        mat-icon-button
+        color="primary"
+        [matMenuTriggerFor]="appMenu"
+        [matMenuTriggerData]="{ user: user }">
+    <mat-icon>menu</mat-icon>
+</button>
+<p class="m12 mat-headline-6">Nested Menu</p>
+<button mat-stroked-button
+        color="primary"
+        class="m12"
+        [matMenuTriggerFor]="animals">Animal index</button>
+<mat-menu #animals="matMenu">
+    <button mat-menu-item
+            [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+    <button mat-menu-item
+            [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+</mat-menu>
+<mat-menu #vertebrates="matMenu">
+    <button mat-menu-item
+            [matMenuTriggerFor]="fish">Fishes</button>
+    <button mat-menu-item
+            [matMenuTriggerFor]="amphibians">Amphibians</button>
+    <button mat-menu-item
+            [matMenuTriggerFor]="reptiles">Reptiles</button>
+    <button mat-menu-item>Birds</button>
+    <button mat-menu-item>Mammals</button>
+</mat-menu>
+<mat-menu #invertebrates="matMenu">
+    <button mat-menu-item>Insects</button>
+    <button mat-menu-item>Molluscs</button>
+    <button mat-menu-item>Crustaceans</button>
+    <button mat-menu-item>Corals</button>
+    <button mat-menu-item>Arachnids</button>
+    <button mat-menu-item>Velvet worms</button>
+    <button mat-menu-item>Horseshoe crabs</button>
+</mat-menu>
+<mat-menu #fish="matMenu">
+    <button mat-menu-item>Baikal oilfish</button>
+    <button mat-menu-item>Bala shark</button>
+    <button mat-menu-item>Ballan wrasse</button>
+    <button mat-menu-item>Bamboo shark</button>
+    <button mat-menu-item>Banded killifish</button>
+</mat-menu>
+<mat-menu #amphibians="matMenu">
+    <button mat-menu-item>Sonoran desert toad</button>
+    <button mat-menu-item>Western toad</button>
+    <button mat-menu-item>Arroyo toad</button>
+    <button mat-menu-item>Yosemite toad</button>
+</mat-menu>
+<mat-menu #reptiles="matMenu">
+    <button mat-menu-item>Banded Day Gecko</button>
+    <button mat-menu-item>Banded Gila Monster</button>
+    <button mat-menu-item>Black Tree Monitor</button>
+    <button mat-menu-item>Blue Spiny Lizard</button>
+    <button mat-menu-item
+            disabled>Velociraptor</button>
+</mat-menu>

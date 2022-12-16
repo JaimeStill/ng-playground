@@ -4,17 +4,18 @@ div.option-grid {
     align-items: center;
 }
 
+mat-icon.mat-icon {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
 mat-icon.fa-icon {
     display: block;
     width: auto;
     height: auto;
     font-size: 126px;
-}
-
-mat-icon.mat-icon {
-    display: block;
-    width: auto;
-    height: auto;
+    padding: 1px;
 }
 
 @media (max-width: 300) {
