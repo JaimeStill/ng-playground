@@ -18,7 +18,8 @@ export class InputRoute {
         phone: '555-444-1234',
         text: 'So many input types!',
         time: '18:00',
-        url: 'https://mapoftheuniverse.net/'
+        url: 'https://mapoftheuniverse.net/',
+        textarea: 'A large block of text'
     }
 
     openUrl = (url: string) => window.open(url, '_blank');

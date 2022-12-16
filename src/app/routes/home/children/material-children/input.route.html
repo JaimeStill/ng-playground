@@ -1,4 +1,3 @@
-<p class="m12 mat-headline-6">Input</p>
 <div class="p8 m8 border-divider rounded background-card input-grid">
     <mat-form-field class="m4"
                     subscriptSizing="dynamic">
@@ -89,20 +88,16 @@
             <mat-icon>open_in_browser</mat-icon>
         </button>
     </mat-form-field>
-</div>
-<div class="p8 m8 border-divider rounded">
-    <pre class="color-accent"><code>{{inputs | json}}</code></pre>
-</div>
-<p class="m12 mat-headline-6">Textarea</p>
-<div class="p8 m4 border-divider rounded background-card"
-     flexContainer
-     flexDirection="column"
-     flexCross="stretch">
-    <mat-form-field class="m4">
+    <mat-form-field class="m4"
+                    subscriptSizing="dynamic">
         <mat-label>Textarea</mat-label>
         <textarea matInput
                   cdkTextareaAutosize
                   cdkAutosizeMinRows="4"
-                  cdkAutosizeMaxRows="8"></textarea>
+                  cdkAutosizeMaxRows="8"
+                  [(ngModel)]="inputs.textarea"></textarea>
     </mat-form-field>
+</div>
+<div class="p8 m8 border-divider rounded">
+    <pre class="color-accent"><code>{{inputs | json}}</code></pre>
 </div>

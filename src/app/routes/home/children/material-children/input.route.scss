@@ -1,6 +1,10 @@
 div.input-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    mat-form-field:has(textarea) {
+        grid-column: 1/-1;
+    }
 }
 
 .mat-mdc-input-element::-webkit-calendar-picker-indicator {
