@@ -1,1 +1,79 @@
-<p class="m8 mat-headline-6">List</p>
+<div class="p4 m8 border-divider rounded">
+    <p class="m8 mat-headline-6">Simple List</p>
+    <mat-list class="m8 rounded border-divider">
+        <mat-list-item>Pepper</mat-list-item>
+        <mat-list-item>Salt</mat-list-item>
+        <mat-list-item>Paprika</mat-list-item>
+    </mat-list>
+    <p class="m8 mat-headline-6">List with Sections</p>
+    <mat-list class="m8 rounded border-divider">
+        <div mat-subheader>Folders</div>
+        <mat-list-item *ngFor="let folder of folders">
+            <mat-icon matListItemIcon>folder</mat-icon>
+            <div matListItemTitle>{{folder.name}}</div>
+            <div matListItemLine>{{folder.updated | date}}</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <div mat-subheader>Notes</div>
+        <mat-list-item *ngFor="let note of notes">
+            <mat-icon matListItemIcon>note</mat-icon>
+            <div matListItemTitle>{{note.name}}</div>
+            <div matListItemLine>{{note.updated | date}}</div>
+        </mat-list-item>
+    </mat-list>
+    <p class="m8 mat-headline-6">List with Selection</p>
+    <div class="m8 border-divider rounded">
+        <mat-selection-list #shoes
+                            class="m8">
+            <mat-list-option *ngFor="let shoe of shoeTypes">{{shoe}}</mat-list-option>
+        </mat-selection-list>
+        <p class="m8 mat-subtitle-1">Options selected: {{shoes.selectedOptions.selected.length}}</p>
+    </div>
+    <p class="m8 mat-headline-6">List with Single Selection</p>
+    <div class="m8 border-divider rounded">
+        <mat-selection-list #singularShoes
+                            class="m8"
+                            [multiple]="false">
+            <mat-list-option *ngFor="let shoe of shoeTypes"
+                             [value]="shoe">{{shoe}}</mat-list-option>
+        </mat-selection-list>
+        <p class="m8 mat-subtitle-1">
+            Option selected: {{singularShoes.selectedOptions.hasValue() ?
+            singularShoes.selectedOptions.selected[0].value : 'None'}}
+        </p>
+    </div>
+    <p class="m8 mat-headline-6">Multi-line List</p>
+    <mat-list class="m8 rounded border-divider">
+        <mat-list-item>
+            <span matListItemTitle>Pepper</span>
+            <span maListItemLine>Produced by a plant</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle>Salt</span>
+            <span matListItemLine>Extracted from sea water</span>
+        </mat-list-item>
+        <mat-list-item>
+            <span matListItemTitle>Paprika</span>
+            <span matListItemLine>Produced by dried and ground red peppers</span>
+        </mat-list-item>
+    </mat-list>
+    <p class="m8 mat-headline-6">Action List</p>
+    <mat-action-list class="m8 rounded border-divider">
+        <button mat-list-item
+                (click)="save()">Save</button>
+        <button mat-list-item
+                (click)="undo()">Undo</button>
+    </mat-action-list>
+    <p class="m8 mat-headline-6">Navigation List</p>
+    <mat-nav-list class="m8 rounded border-divider">
+        <a mat-list-item
+           href="https://angular.io/"
+           target="_blank">Angular</a>
+        <a mat-list-item
+           href="https://material.io/"
+           target="_blank">Material</a>
+        <a mat-list-item
+           href="https://material.angular.io"
+           target="_blank">Components</a>
+    </mat-nav-list>
+</div>
