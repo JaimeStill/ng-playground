@@ -1,0 +1,35 @@
+<div class="p8 m8 border-divider rounded background-card option-grid">
+    <mat-slide-toggle class="m4"
+                      [(ngModel)]="autoActive">Activate First Option</mat-slide-toggle>
+    <mat-slide-toggle class="m4"
+                      [(ngModel)]="autoSelect">Set Active When Navigating</mat-slide-toggle>
+</div>
+<div class="p8"
+     flexContainer
+     flexDirection="column"
+     flexCross="stretch">
+    <mat-form-field>
+        <mat-label>Book</mat-label>
+        <input matInput
+               type="text"
+               [formControl]="bookCtrl"
+               [matAutocomplete]="bookAuto">
+        <mat-autocomplete #bookAuto="matAutocomplete"
+                          [displayWith]="displayBook"
+                          [autoActiveFirstOption]="autoActive"
+                          [autoSelectActiveOption]="autoSelect"
+                          (optionSelected)="selectBook($event)">
+            <mat-option *ngFor="let book of books | async"
+                        [value]="book">
+                <div class="my4">
+                    <p class="m4">{{book.title}} - {{book.genre}}</p>
+                    <p class="m4">{{book.author}}</p>
+                </div>
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</div>
+<div class="p8 m8 border-divider rounded background-card"
+     *ngIf="selectedBook">
+    <pre class="color-primary"><code>{{selectedBook | json}}</code></pre>
+</div>
