@@ -11,3 +11,7 @@ button.mat-mdc-icon-button.small {
         transform: scale(0.8);
     }
 }
+
+.thin-bottom-sheet .mat-bottom-sheet-container {
+    min-width: 60vw;
+}

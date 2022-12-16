@@ -3,10 +3,14 @@ import {
     OnDestroy
 } from '@angular/core';
 
+import {
+    Picsum,
+    PicsumData
+} from '../../../../models';
+
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { PicsumDialog } from '../../../../dialogs';
-import { Picsum, PicsumData } from '../../../../models';
 import { SnackerService } from '../../../../services';
 
 @Component({

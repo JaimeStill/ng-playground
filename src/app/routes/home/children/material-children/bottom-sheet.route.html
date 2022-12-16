@@ -1,1 +1,64 @@
-<p class="m8 mat-headline-6">Bottom Sheet</p>
+<ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
+<ng-container *ngIf="picsum.data$ | async as data else loading">
+    <div class="p8 m4 border-divider rounded"
+         class="dialog-grid">
+        <div flexContainer
+             flexMain="space-between"
+             flexCross="center">
+            <button mat-icon-button
+                    class="m4"
+                    [disabled]="!(data.links?.prev)"
+                    (click)="navigate(data.links?.prev)">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+            <div flexChild
+                 flexContainer
+                 flexDirection="column"
+                 flexMain="center"
+                 flexCross="stretch">
+                <p class="m4 mat-body-strong"
+                   flexChild
+                   flexAlignSelf="center">Limit</p>
+                <mat-slider class="m4"
+                            discrete
+                            flexChild
+                            [min]="10"
+                            [max]="100"
+                            [step]="5">
+                    <input matSliderThumb
+                           [value]="picsum.limit"
+                           (valueChange)="setLimit($event)">
+                </mat-slider>
+            </div>
+            <button mat-icon-button
+                    class="m4"
+                    [disabled]="!(data.links?.next)"
+                    (click)="navigate(data.links?.next)">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+        <div flexContainer
+             flexWrap="wrap"
+             flexMain="start"
+             flexCross="start">
+            <div *ngFor="let pic of data.pics"
+                 class="p8 m4 background-card rounded border-divider">
+                <div flexContainer
+                     flexMain="space-between"
+                     flexCross="center">
+                    <p class="m4 mat-subtitle-1">{{pic.author}}</p>
+                    <button mat-icon-button
+                            color="primary"
+                            (click)="view(pic)">
+                        <mat-icon>launch</mat-icon>
+                    </button>
+                </div>
+                <img [src]="picsum.setThumbnail(pic, 260, 260)"
+                     [alt]="pic.url"
+                     [width]="260">
+            </div>
+        </div>
+    </div>
+</ng-container>

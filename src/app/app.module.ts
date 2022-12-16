@@ -22,6 +22,7 @@ import { Dialogs } from './dialogs';
 import { Directives } from './directives';
 import { Forms } from './forms';
 import { Pipes } from './pipes';
+import { Sheets } from './sheets';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { Pipes } from './pipes';
     ...Directives,
     ...Forms,
     ...Pipes,
-    ...RouteComponents
+    ...RouteComponents,
+    ...Sheets
   ],
   imports: [
     BrowserModule,
