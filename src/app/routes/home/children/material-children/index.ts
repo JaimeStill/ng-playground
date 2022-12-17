@@ -3,6 +3,7 @@ import { Route } from '@angular/router';
 import { AutocompleteRoute } from './autocomplete.route';
 import { BadgeRoute } from './badge.route';
 import { BottomSheetRoute } from './bottom-sheet.route';
+import { ButtonToggleRoute } from './button-toggle.route';
 import { ButtonRoute } from './button.route';
 import { CheckboxRoute } from './checkbox.route';
 import { ChipsRoute } from './chips.route';
@@ -37,6 +38,7 @@ export const MaterialChildComponents = [
     BadgeRoute,
     BottomSheetRoute,
     ButtonRoute,
+    ButtonToggleRoute,
     CheckboxRoute,
     ChipsRoute,
     DialogRoute,
@@ -71,6 +73,7 @@ export const MaterialChildRoutes: Route[] = [
     { path: 'badge', component: BadgeRoute },
     { path: 'bottom-sheet', component: BottomSheetRoute },
     { path: 'button', component: ButtonRoute },
+    { path: 'button-toggle', component: ButtonToggleRoute },
     { path: 'checkbox', component: CheckboxRoute },
     { path: 'chips', component: ChipsRoute },
     { path: 'dialog', component: DialogRoute },

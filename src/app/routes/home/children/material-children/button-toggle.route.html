@@ -1,0 +1,28 @@
+<div class="p8 m8 border-dialog rounded background-card"
+     flexContainer
+     flexMain="space-between"
+     flexCross="center">
+    <div>
+        <p class="mat-headline-6 m4">Color</p>
+        <mat-button-toggle-group class="m4"
+                                 name="color"
+                                 [(ngModel)]="color">
+            <mat-button-toggle value="color-primary">Primary</mat-button-toggle>
+            <mat-button-toggle value="color-accent">Accent</mat-button-toggle>
+            <mat-button-toggle value="color-warn">Warn</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div>
+        <p class="mat-headline-6 m4">Style</p>
+        <mat-button-toggle-group class="m4"
+                                 name="style"
+                                 multiple
+                                 [(ngModel)]="format">
+            <mat-button-toggle value="bold">Bold</mat-button-toggle>
+            <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+</div>
+<p class="m12 preview-text"
+   [ngClass]="style">Wubba Lubba Dub Dub!</p>

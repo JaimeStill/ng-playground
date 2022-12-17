@@ -12,6 +12,7 @@ export class MaterialRoute {
         { url: 'badge', label: 'Badge' },
         { url: 'bottom-sheet', label: 'Bottom Sheet' },
         { url: 'button', label: 'Button' },
+        { url: 'button-toggle', label: 'Button Toggle' },
         { url: 'checkbox', label: 'Checkbox' },
         { url: 'chips', label: 'Chips' },
         { url: 'dialog', label: 'Dialog' },
